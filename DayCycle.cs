@@ -81,9 +81,9 @@ public class DayCycle : MonoBehaviour {
 			}
 			else 
 			{
-				RenderSettings.ambientSkyColor=Color.Lerp(sunrise_color,day_ambient_color,p*2);
-				RenderSettings.ambientIntensity=Mathf.Lerp(SKY_DAWN_INTENS,SKY_DAY_INTENS,p*2);
-				RenderSettings.reflectionIntensity=Mathf.Lerp(SKY_DAWN_REF_INTENS,SKY_DAY_REF_INTENS,p*2);
+				RenderSettings.ambientSkyColor=Color.Lerp(sunrise_color,day_ambient_color,p*2-1);
+				RenderSettings.ambientIntensity=Mathf.Lerp(SKY_DAWN_INTENS,SKY_DAY_INTENS,p*2-1);
+				RenderSettings.reflectionIntensity=Mathf.Lerp(SKY_DAWN_REF_INTENS,SKY_DAY_REF_INTENS,p*2-1);
 			}
 
 			if (daytime>SUNRISE_END) SetDaypart(2);
@@ -96,9 +96,9 @@ public class DayCycle : MonoBehaviour {
 			sun_l.intensity=(1-p)*SUN_NORMAL_INTENS;
 			sun_l.color=Color.Lerp(day_color,sunset_color,p);
 			if (p>0.5f) {//from dusk to night
-				RenderSettings.ambientSkyColor=Color.Lerp(sunrise_color,night_ambient_color,p*2);
-				RenderSettings.ambientIntensity=Mathf.Lerp(SKY_DUSK_INTENS,SKY_NIGHT_INTENS,p*2);
-				RenderSettings.reflectionIntensity=Mathf.Lerp(SKY_DUSK_REF_INTENS,SKY_NIGHT_REF_INTENS,p*2);
+				RenderSettings.ambientSkyColor=Color.Lerp(sunrise_color,night_ambient_color,p*2-1);
+				RenderSettings.ambientIntensity=Mathf.Lerp(SKY_DUSK_INTENS,SKY_NIGHT_INTENS,p*2-1);
+				RenderSettings.reflectionIntensity=Mathf.Lerp(SKY_DUSK_REF_INTENS,SKY_NIGHT_REF_INTENS,p*2-1);
 			}
 			else 
 			{
